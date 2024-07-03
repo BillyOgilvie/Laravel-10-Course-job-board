@@ -1,19 +1,45 @@
-/.phpunit.cache
 /node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
 /vendor
-.env
-.env.backup
-.env.production
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-auth.json
-npm-debug.log
-yarn-error.log
-/.fleet
+/.env
+/.env.*.local
+/.phpunit.result.cache
 /.idea
 /.vscode
+/storage/*.key
+/storage/logs/*.log
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/public/storage
+/public/hot
+/public/storage
+/public/mix-manifest.json
+/public/js/app.js
+/public/js/app.js.map
+/public/css/app.css
+/public/css/app.css.map
+/public/js/vendor
+/public/css/vendor
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore node-sass cache
+.sass-cache
+
+# Ignore coverage reports
+/coverage
+
+# Ignore Laravel Mix files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore composer.lock for dependencies if you commit it (optional)
+# /composer.lock

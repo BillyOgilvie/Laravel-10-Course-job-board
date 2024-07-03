@@ -1,16 +1,54 @@
 services:
-  mysql:
+  laravel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: laravel-app
+    container_name: laravel
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: laravel
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - laravel
+    ports:
+      - 9000:9000
+    depends_on:
+      - db
+    user: devuser
+
+  db:
     image: mariadb:10.8.3
-    # Uncomment below when on Mac M1
     platform: linux/arm64/v8
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel-10-job-board
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
     ports:
       - 3307:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - laravel
+
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
+    networks:
+      - laravel
+
+networks:
+  laravel:
+    driver: bridge
+
+volumes:
+  mysql-data:

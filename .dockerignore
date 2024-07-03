@@ -1,0 +1,44 @@
+# Ignore node_modules and vendor directories
+/node_modules
+/vendor
+
+# Ignore git directory
+.git
+.gitignore
+
+# Ignore Dockerfile and docker-compose files
+Dockerfile
+docker-compose.yml
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+
+# Ignore IDE and editor files
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Ignore env files
+.env
+.env.*.local
+
+# Ignore coverage reports
+/coverage
+
+# Ignore Laravel Mix files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore build artifacts
+/public/js/app.js
+/public/js/app.js.map
+/public/css/app.css
+/public/css/app.css.map
+/public/js/vendor
+/public/css/vendor
+
+# Ignore Mac system files
+.DS_Store
