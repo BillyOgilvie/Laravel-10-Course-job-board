@@ -13,10 +13,12 @@ services:
     working_dir: /var/www
     volumes:
       - ./:/var/www
+      - /var/www/node_modules
     networks:
       - laravel
     ports:
       - 9000:9000
+      - 5173:5173  # Expose Vite's HMR port
     depends_on:
       - db
     user: devuser
