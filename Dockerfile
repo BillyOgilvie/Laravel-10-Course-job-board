@@ -46,10 +46,11 @@ RUN chown -R devuser:devuser /var/www
 # Change current user to the new user
 USER devuser
 
-# Install Vite and other frontend dependencies
+# Install frontend dependencies
 RUN npm install
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 
+# Start PHP-FPM service
 CMD ["php-fpm"]
