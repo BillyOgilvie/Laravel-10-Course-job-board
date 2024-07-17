@@ -49,8 +49,9 @@ USER devuser
 # Install frontend dependencies
 RUN npm install
 
-# Expose port 9000 and start php-fpm server
-EXPOSE 9000
+# Expose port 8000 for Laravel dev server and 5173 for Vite
+EXPOSE 8000
+EXPOSE 5173
 
 # Start PHP-FPM service
 CMD ["php-fpm"]
