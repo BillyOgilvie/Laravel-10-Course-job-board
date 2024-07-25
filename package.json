@@ -13,6 +13,7 @@
     "vite": "^5.3.3"
   },
   "dependencies": {
+    "alpinejs": "^3.14.1",
     "axios": "^1.7.2",
     "laravel-vite-plugin": "^1.0.4"
   }
